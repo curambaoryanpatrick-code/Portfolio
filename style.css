@@ -1,0 +1,402 @@
+/* =========================
+   THEME COLORS
+========================= */
+
+:root{
+    --primary: #ffa31a;
+    --secondary: #808080;
+    --dark: #1b1b1b;
+    --dark-light: #292929;
+    --text: #ffffff;
+}
+
+/* =========================
+   GLOBAL
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--dark);
+    color:var(--text);
+    overflow-x:hidden;
+    line-height:1.6;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    background:rgba(27,27,27,.90);
+    backdrop-filter:blur(20px);
+
+    border-bottom:1px solid rgba(255,163,26,.2);
+
+    z-index:1000;
+}
+
+.logo{
+    font-size:1.7rem;
+    font-weight:700;
+    color:var(--primary);
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:var(--text);
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--primary);
+}
+
+.hamburger{
+    display:none;
+    color:var(--primary);
+    font-size:1.8rem;
+    cursor:pointer;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:60px;
+    padding:100px 8%;
+
+    background:
+    radial-gradient(circle at top right,
+    rgba(255,163,26,.15),
+    transparent 40%);
+}
+
+.hero-text{
+    flex:1;
+}
+
+.hero-text span{
+    color:var(--primary);
+    font-size:1.1rem;
+}
+
+.hero-text h1{
+    font-size:4rem;
+    margin:10px 0;
+}
+
+.hero-text h2{
+    color:var(--primary);
+    margin-bottom:20px;
+}
+
+.hero-text p{
+    color:var(--secondary);
+    max-width:600px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    margin-top:30px;
+}
+
+.btn,
+.btn-outline{
+    padding:12px 28px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn{
+    background:var(--primary);
+    color:var(--dark);
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 0 20px rgba(255,163,26,.5);
+}
+
+.btn-outline{
+    border:2px solid var(--primary);
+    color:var(--primary);
+}
+
+.btn-outline:hover{
+    background:var(--primary);
+    color:var(--dark);
+}
+
+.hero-image{
+    flex:1;
+    display:flex;
+    justify-content:center;
+}
+
+.hero-image img{
+    width:350px;
+    height:350px;
+    object-fit:cover;
+    border-radius:50%;
+
+    border:5px solid var(--primary);
+
+    box-shadow:
+    0 0 20px rgba(255,163,26,.5),
+    0 0 60px rgba(255,163,26,.3);
+
+    animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+    50%{
+        transform:translateY(-15px);
+    }
+}
+
+/* =========================
+   SECTION
+========================= */
+
+section{
+    padding:100px 8%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:2.8rem;
+    color:var(--primary);
+    margin-bottom:60px;
+    position:relative;
+}
+
+.section-title::after{
+    content:"";
+    width:80px;
+    height:4px;
+    background:var(--primary);
+
+    position:absolute;
+    left:50%;
+    bottom:-12px;
+
+    transform:translateX(-50%);
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-content{
+    max-width:900px;
+    margin:auto;
+
+    background:var(--dark-light);
+
+    padding:40px;
+    border-radius:20px;
+
+    text-align:center;
+
+    border:1px solid rgba(255,163,26,.15);
+}
+
+.about-content p{
+    color:var(--secondary);
+    font-size:1.05rem;
+}
+
+/* =========================
+   PROJECTS & CERTIFICATES
+========================= */
+
+.grid,
+.certificate-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
+
+    gap:30px;
+}
+
+.card,
+.certificate{
+    background:var(--dark-light);
+
+    border-radius:20px;
+    overflow:hidden;
+
+    border:1px solid rgba(255,163,26,.1);
+
+    transition:.4s;
+}
+
+.card:hover,
+.certificate:hover{
+    transform:translateY(-10px);
+
+    border-color:var(--primary);
+
+    box-shadow:
+    0 10px 30px rgba(255,163,26,.15);
+}
+
+.card img,
+.certificate img{
+    width:100%;
+    display:block;
+}
+
+.card-content{
+    padding:20px;
+}
+
+.card-content h3{
+    margin-bottom:10px;
+    color:var(--primary);
+}
+
+.card-content p{
+    color:var(--secondary);
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+    text-align:center;
+}
+
+.contact p{
+    margin:10px 0;
+    color:var(--secondary);
+    font-size:1.1rem;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    padding:30px;
+    text-align:center;
+
+    background:#111;
+
+    color:var(--secondary);
+
+    border-top:1px solid rgba(255,163,26,.2);
+}
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+@media(max-width:768px){
+
+    .hamburger{
+        display:block;
+    }
+
+    .nav-links{
+        position:fixed;
+        top:80px;
+        right:-100%;
+
+        width:250px;
+        height:100vh;
+
+        background:var(--dark-light);
+
+        flex-direction:column;
+        align-items:center;
+
+        padding-top:40px;
+
+        transition:.4s;
+    }
+
+    .nav-links.active{
+        right:0;
+    }
+
+    .hero{
+        flex-direction:column-reverse;
+        text-align:center;
+        padding-top:150px;
+    }
+
+    .hero-text h1{
+        font-size:2.5rem;
+    }
+
+    .hero-image img{
+        width:250px;
+        height:250px;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+        flex-wrap:wrap;
+    }
+
+    .section-title{
+        font-size:2rem;
+    }
+
+    .about-content{
+        padding:25px;
+    }
+}
+
+/* =========================
+   TABLETS
+========================= */
+
+@media(min-width:769px) and (max-width:1024px){
+
+    .hero{
+        gap:40px;
+    }
+
+    .hero-text h1{
+        font-size:3rem;
+    }
+
+    .hero-image img{
+        width:300px;
+        height:300px;
+    }
+}
